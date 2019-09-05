@@ -10,3 +10,7 @@ jobs:
         uses: evanberkowitz/latex-action@master
         with:
           root_file: master.tex
+      - uses: actions/upload-artifact@master
+        with:
+          name: master.pdf
+          path: output
