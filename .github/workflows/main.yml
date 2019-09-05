@@ -7,11 +7,9 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@HEAD
       - name: Compile LaTeX document
-        uses: evanberkowitz/latex-action@master
+        uses: evanberkowitz/latex-action@use-make
         with:
           root_file: master.tex
-      - run: make clean
-      - run: make push DRAFT=1
       - run: mkdir pdf_output
       - run: cp master.pdf pdf_output
       - uses: actions/upload-artifact@master
