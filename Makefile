@@ -48,6 +48,9 @@ git-hooks:
 remove-git-hooks:
 	for h in hooks/*; do rm ".git/$$h"; done
 
+.PHONY: push
+push: all
+
 .PHONY: tidy
 tidy:
 	$(RM) section/*.aux

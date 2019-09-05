@@ -10,9 +10,10 @@ jobs:
         uses: evanberkowitz/latex-action@master
         with:
           root_file: master.tex
+      - run: make push DRAFT=1
       - run: mkdir pdf_output
       - run: cp master.pdf pdf_output
       - uses: actions/upload-artifact@master
         with:
-          name: pdf_output 
+          name: pdf_output
           path: pdf_output
